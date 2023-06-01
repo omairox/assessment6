@@ -29,8 +29,8 @@ describe("Duel Duo tests", () => {
   test("clicking on 'add to duo' displays div with id='player-duo'", async () => {
     await driver.get("http://localhost:3000");
     await driver.sleep(5000)
-    await driver.findElement(By.id('draw').click())
-    await driver.findElement(By.className('bot-btn').click())
+    await driver.findElement(By.id('draw')).click()
+    await driver.findElement(By.className('bot-btn')).click()
     const playerDuoDiv = await driver.findElement(By.id('player-duo'))
     const displayed = await playerDuoDiv.isDisplayed()
     expect(displayed).toBe(true)
